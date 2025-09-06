@@ -1,0 +1,320 @@
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Header */
+header {
+    background-color: #282c34;
+    color: #ffffff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 0;
+    float: left;
+    font-size: 1.8rem;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #61dafb;
+}
+
+/* Clearfix for header */
+header .container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1500x500?text=Computer+Store+Background') no-repeat center center/cover;
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Carousel Section */
+.carousel-section {
+    padding: 40px 0;
+    background-color: #ffffff;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Penting untuk menyembunyikan gambar di luar slide */
+}
+
+.carousel-section h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #282c34;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 800px; /* Lebar maksimum carousel */
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Pastikan gambar tidak keluar dari container */
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Animasi geser */
+    height: 400px;
+}
+
+.carousel-slide img {
+    width: 100%; /* Setiap gambar akan mengisi lebar slide */
+    flex-shrink: 0; /* Mencegah gambar menyusut */
+    height: 400px; /* Tinggi gambar agar konsisten */
+    object-fit: contain; /* Memastikan gambar memenuhi area tanpa terdistorsi */
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+@media (max-width: 768px) {
+    .carousel-slide {
+        height: 250px; /* Tinggi carousel lebih kecil di mobile */
+    }
+}
+
+/* Products Section */
+.products-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.products-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #282c34;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: 200px; /* Tinggi gambar produk */
+    object-fit: contain; /* Menjaga rasio aspek gambar */
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.product-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-item p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.product-item .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #e44d26; /* Warna harga */
+    display: block;
+    margin-bottom: 15px;
+}
+
+.product-item .add-to-cart {
+    background-color: #e44d26;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.product-item .add-to-cart:hover {
+    background-color: #c43b1f;
+}
+
+/* About & Contact Section */
+.about-section, .contact-section {
+    padding: 40px 0;
+    background-color: #ffffff;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.about-section h2, .contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #282c34;
+}
+
+.contact-section ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.contact-section ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+
+/* Footer */
+footer {
+    background-color: #282c34;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        float: none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk mobile */
+    }
+
+    .carousel-slide img {
+        height: 250px; /* Tinggi gambar carousel di mobile */
+    }
+}
